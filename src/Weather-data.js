@@ -2,10 +2,10 @@ import React, {useState} from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
 
-export default function Weatherdata () {
+export default function Weatherdata (props) {
     
     let [weatherData, setWeatherData] = useState({ready: false});    
-    let [city, setCity] = useState("Lisbon");  
+    let [city, setCity] = useState(props.city);  
     
 
     function updateWeather(response){
@@ -15,17 +15,27 @@ export default function Weatherdata () {
             wind: response.data.wind.speed,
             icon: <img src={response.data.condition.icon_url} alt={response.data.condition.description}/>,
             ready: true,
-            date: new Date(response.data.time),          
+            date: new Date(response.data.time), 
+            city: response.data.city,         
         });                    
     }    
 
+    function search(){
+        let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=8dod4a3bd4def17f159b978bb700cbt9`;
+        axios.get(url).then(updateWeather);
+
+    }
+   
+   
     function handleSubmit(event){
         event.preventDefault();
+        search();
     }
 
     function updateCity(event){
         setCity(event.target.value);
     }
+
     if (weatherData.ready){    
     return (
         <div>
@@ -38,7 +48,7 @@ export default function Weatherdata () {
         <div className="weather-data"> 
         <div> 
             <h1>
-                {city}
+                {weatherData.city}
             </h1>
             <p className="weather-app-details">
                 <FormattedDate date={weatherData.date}/>
@@ -54,10 +64,9 @@ export default function Weatherdata () {
         </div>
     );
     } else {
-    let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=8dod4a3bd4def17f159b978bb700cbt9`;
-    axios.get(url).then(updateWeather);
-
-    return(
+    
+        search();
+        return(
         "The app is loading..."
     );
 
