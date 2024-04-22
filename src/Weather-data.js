@@ -8,7 +8,7 @@ export default function Weatherdata () {
                 Paris
             </h1>
             <p className="weather-app-details">
-                <span id="time"></span>, <span id="weatherCondition"></span>
+                <span id="time">Thursday</span>, <span id="weatherCondition">12:00</span>
                 <br/>
                 Humidity: <strong id="humidity">18%</strong>, Wind: <strong id="windSpeed">2km/h</strong>
             </p>
