@@ -16,7 +16,7 @@ export default function Weatherdata () {
         <div className= "weather-app-temperature-container">
             <div id="icon"></div>
             <div className= "weather-app-temperature-value">11</div>
-            <div className= "weather-app-temperature-unit">ºC</div>
+            <div className= "weather-app-temperature-unit">ºC|F</div>
         </div>
     </div>
     );
