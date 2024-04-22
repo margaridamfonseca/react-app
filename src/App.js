@@ -1,5 +1,4 @@
 import './App.css';
-import Form from "./Form";
 import Weatherdata from "./Weather-data";
 import Forecast from "./Forecast";
 
@@ -8,9 +7,6 @@ function App() {
     <div className="App">
     <div className="container">
     <div className="weather-app"> 
-      <header> 
-         <Form /> 
-      </header>
       <main>
           <Weatherdata />
           <Forecast />                
