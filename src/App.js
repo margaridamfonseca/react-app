@@ -20,7 +20,7 @@ function App() {
       </footer>
   </div>
   </div>
-  </div>
+  </div> 
   );
 }
 
