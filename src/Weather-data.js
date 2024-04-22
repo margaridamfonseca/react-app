@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
+import TemperatureUnit from "./TemperatureUnit";
 
 export default function Weatherdata (props) {
     
@@ -57,8 +58,7 @@ export default function Weatherdata (props) {
         </div>
         <div className= "weather-app-temperature-container">
             <div className="weather-app-temperature-icon">{weatherData.icon}</div>
-            <div className= "weather-app-temperature-value">{weatherData.temperature}</div>
-            <div className= "weather-app-temperature-unit">ºC|F</div>
+            <TemperatureUnit temperature={weatherData.temperature}/>
         </div>
         </div>
         </div>
