@@ -1,38 +1,129 @@
 .App {
+  font-family: sans-serif;
   text-align: center;
 }
+body{
+  background-color: #E8E8E8;
+  font-family: "Nunito", sans-serif;
+} 
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  border-bottom: 1px solid #f9f7fe;
+  padding: 0 0 30px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a{
+  color: #BFBFBF ;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.weather-app{
+  background-color: white;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 30px 50px #BFBFBF;
+  max-width: 550px;
+}
+
+
+.form-search-box{
+  font-size: 14px;
+  background-color: #EEEEEE;
+  color:#6C7A89;
+  width: 80%;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.form-search-button{
+  font-size: 14px;
+  background-color: #89C4F4;
+  color:white;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  margin-left: 5px;
+}
+
+main {
+  padding: 10px 0;
+  border-bottom: 1px solid #f9f7fe;
+}
+
+.weather-data{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  margin-top: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+h1{
+  font-size: 40px;
+  font-weight: 800;
+  margin:0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.weather-app-details{
+  font-size: 16px;
+  color:#6C7A89;
+  margin-top: 0;
+
+}
+
+.weather-app-details strong {
+  color: #89C4F4;
+}
+
+.weather-app-temperature-container{
+  display: flex;
+}
+
+.weather-app-temperature-icon{
+  height: 100px;
+  width: 100px;
+  margin-top: 7px;
+}
+
+.weather-app-temperature-value{
+  font-size: 88px;
+  font-weight: 800;
+  margin-left: 8px;
+}
+
+.weather-app-temperature-unit {
+  font-size: 30px;
+  margin-top: 18px;
+}
+
+.forecast{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.weather-forecast-date{
+  color: #6C7A89;
+}
+
+.weather-forecast-icon{
+  margin-top: 8px;
+  width: 80%;
+}
+
+.weather-forecast-temperatures{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 4px;
+  color: #89C4F4;
+  font-size: 16px;
+}
+
+footer{
+  font-size: 12px;
+  color: #6C7A89;
+  text-align: center;
+  margin-top: 30px;
+  
 }
