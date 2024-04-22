@@ -22,7 +22,7 @@ a{
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 30px 50px #BFBFBF;
-  max-width: 550px;
+  max-width: 600px;
 }
 
 
@@ -81,18 +81,18 @@ h1{
 .weather-app-temperature-icon{
   height: 100px;
   width: 100px;
-  margin-top: 7px;
+  margin-top: 6px;  
 }
 
 .weather-app-temperature-value{
-  font-size: 88px;
+  font-size: 70px;
   font-weight: 800;
   margin-left: 8px;
 }
 
 .weather-app-temperature-unit {
-  font-size: 30px;
-  margin-top: 18px;
+  font-size: 20px;
+  margin-top: 24px;
 }
 
 .forecast{
