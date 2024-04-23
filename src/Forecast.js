@@ -4,26 +4,37 @@ import axios from "axios";
 export default function Forecast (props){
 
     let [forecastData, setForecastData] = useState({ready: false});
-    let [city, setCity] = useState(props.city);
+    let [day, setDay] = useState(""); 
+    let city = props.city;
+    
 
+    
     
 
     function updateForecast(response){
+        console.log(response.data);
+        
+        let date = new Date(response.data.daily[0].time)
+        let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        let weekDay = days[date.getDay()];
+
+        setDay(weekDay);
+        
         setForecastData({
-            date: "Tue" ,
             icon: <img src= {response.data.daily[0].condition.icon_url} />,
             temperatureMax: Math.round(response.data.daily[0].temperature.maximum),
             temperatureMin: Math.round(response.data.daily[0].temperature.minimum),
             ready: true
 
         });
+        
     }
 
     if (forecastData.ready){
     return (
         <div className="forecast">
             <div className="weather-forecast-day">
-                <div className="weather-forecast-date">{forecastData.date}</div>
+                <div className="weather-forecast-date">{day}</div>
                 <p  className="weather-forecast-icon">{forecastData.icon}</p>
                 <div className="weather-forecast-temperatures">
                     <div className="weather-forecast-temperature-max">

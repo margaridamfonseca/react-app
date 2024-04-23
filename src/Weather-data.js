@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import axios from "axios";
 import FormattedDate from "./FormattedDate";
 import TemperatureUnit from "./TemperatureUnit";
+import Forecast from "./Forecast";
 
 export default function Weatherdata (props) {
     
@@ -61,7 +62,9 @@ export default function Weatherdata (props) {
             <TemperatureUnit temperature={weatherData.temperature}/>
         </div>
         </div>
+        <Forecast city={weatherData.city}/>  
         </div>
+
     );
     } else {
     
