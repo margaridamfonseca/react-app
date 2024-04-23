@@ -7,7 +7,8 @@ import Forecast from "./Forecast";
 export default function Weatherdata (props) {
     
     let [weatherData, setWeatherData] = useState({ready: false});    
-    let [city, setCity] = useState(props.city);  
+    let [city, setCity] = useState(props.city);
+    
     
 
     function updateWeather(response){
@@ -62,7 +63,6 @@ export default function Weatherdata (props) {
             <TemperatureUnit temperature={weatherData.temperature}/>
         </div>
         </div>
-        <Forecast city={weatherData.city}/>  
         </div>
 
     );
