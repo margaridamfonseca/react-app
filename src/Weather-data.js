@@ -12,16 +12,21 @@ export default function Weatherdata (props) {
     
 
     function updateWeather(response){
+        
         setWeatherData({
             temperature: Math.round(response.data.temperature.current),
             humidity: response.data.temperature.humidity,
             wind: response.data.wind.speed,
             icon: <img src={response.data.condition.icon_url} alt={response.data.condition.description}/>,
             ready: true,
-            date: new Date(response.data.time), 
+            date: new Date(response.data.time * 1000), 
             city: response.data.city,         
-        });                    
-    }    
+        });    
+       
+        
+    }  
+    
+    
 
     function search(){
         let url = `https://api.shecodes.io/weather/v1/current?query=${city}&key=8dod4a3bd4def17f159b978bb700cbt9`;
@@ -36,7 +41,7 @@ export default function Weatherdata (props) {
     }
 
     function updateCity(event){
-        setCity(event.target.value);
+        setCity(event.target.value)
     }
 
     if (weatherData.ready){    

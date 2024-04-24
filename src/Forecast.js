@@ -1,30 +1,24 @@
 import React, {useState} from "react";
 import axios from "axios";
+import WeatherForecastDay from "./WeatherForecastDay";
 
 
 export default function Forecast(props){
 
     let [loaded, setLoaded] = useState(false);
+    let [forecast, setForecast] = useState("");
     
 
     function updateForecast(response){
-        console.log(response);
+        setForecast(response.data.daily);
+        setLoaded(true);
     }
 
     if (loaded) {  
 
     return(
         <div className="forecast">
-            <div className="weather-forecast-day">
-                <div className="weather-forecast-date">Tue</div>
-                <p  className="weather-forecast-icon">☀️</p>            
-            <div className="weather-forecast-temperatures">
-                <div className="weather-forecast-temperature-max">
-                <strong>18º</strong>
-                </div>
-                <div className="weather-forecast-temperature-min">10º</div>
-            </div>
-            </div>
+            <WeatherForecastDay data={forecast[0]} />
         </div>
     );
 
