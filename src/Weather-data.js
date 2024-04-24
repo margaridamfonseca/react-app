@@ -63,6 +63,7 @@ export default function Weatherdata (props) {
             <TemperatureUnit temperature={weatherData.temperature}/>
         </div>
         </div>
+        <Forecast city={weatherData.city}/>
         </div>
 
     );
